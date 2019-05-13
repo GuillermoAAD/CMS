@@ -1,0 +1,18 @@
+table {
+    text-align: center;
+    width: 90%;
+    border: 1px solid black;
+ }
+
+ td {
+    border: 1px solid gray;
+ }
+
+ .blanco {
+    background-color: white; 
+}
+
+ .gris {
+    background-color: gray; 
+ }
+

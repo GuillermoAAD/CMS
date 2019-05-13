@@ -1,0 +1,17 @@
+listado------------------OK
+detalles-----------------OK
+insertar-----------------OK
+eliminar-----------------OK
+modificar----------------OK
+login--------------------
+
+
+### CONSULTAS SQL UTILES
+
+// todos vuelven a estar activos y deseliminados
+UPDATE administradores 
+SET activo=1, eliminado=0 
+WHERE activo=0 AND eliminado=1
+
+//para reiniciar el autoincrementable al ultimo  
+ALTER TABLE nombre_tabla AUTO_INCREMENT = '$ultimo_id';
