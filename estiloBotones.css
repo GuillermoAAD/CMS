@@ -1,0 +1,61 @@
+/* ####### Botones ####### */
+
+input {
+   width: 100%;
+   /*width: inherit;*/
+}
+
+/* Elimina */
+.elimina {
+   background: tomato;
+}
+
+.elimina:hover {
+   background: red;
+}
+
+.elimina:active {
+   background: maroon;
+}
+
+/* Modifica */
+
+.modifica {
+   background: cornflowerblue;
+}
+
+.modifica:hover {
+   background: blue;
+}
+
+.modifica:active {
+   background: navy;
+}
+
+/* Ver detalles */
+
+.ver {
+   background: mediumturquoise;
+}
+
+.ver:hover {
+   background: cadetblue;
+}
+
+.ver:active {
+   background: teal;
+}
+
+/* Inserta */
+
+.inserta {
+   background: lightgreen;
+}
+
+.inserta:hover {
+   background: mediumseagreen;
+}
+
+.inserta:active {
+   background: green;
+}

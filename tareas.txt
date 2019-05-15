@@ -1,9 +1,14 @@
-listado------------------OK
-detalles-----------------OK
-insertar-----------------OK
-eliminar-----------------OK
-modificar----------------OK
-login--------------------
+
+                      FUNCIONAL    CSS
+listado------------------OK--------50%
+detalles-----------------OK--------OK
+insertar-----------------OK--------0%
+eliminar-----------------OK--------OK
+modificar----------------OK--------OK
+
+login--------------------0%--------0
+principal----------------OK--------0
+menu---------------------OK--------0
 
 
 ### CONSULTAS SQL UTILES

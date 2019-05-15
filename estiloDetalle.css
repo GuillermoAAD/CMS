@@ -1,0 +1,29 @@
+
+/* Listado */
+.detalle {
+    margin: auto;
+    text-align: left;
+    width: 70%;
+    /*border: 1px solid black;*/
+}
+
+.detalle td {
+    /*border: 1px solid gray;*/
+    height: 25px;
+}
+
+.col1 {
+    font-weight: bold;
+    text-align: right;
+    width: 100px;
+}
+
+
+
+.blanco {
+    background-color: white; 
+}
+
+.gris {
+    background-color: rgb(230, 230, 230); 
+}

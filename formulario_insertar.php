@@ -31,6 +31,10 @@
 
    <body>
 
+      <?php
+         include "menu.php";
+      ?>
+
       <form name="forma01" method="post" action="inserta.php">
 
    	   <input type="text" name="nombre" id="nombre" placeholder="Escribe tu(s)  nombre(s)" /> <br>

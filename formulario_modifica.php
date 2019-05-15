@@ -1,6 +1,10 @@
+<link rel="stylesheet" href="estiloDetalle.css" />
+<link rel="stylesheet" href="estiloBotones.css" />
+
 <?php
    require "conecta.php";
    require "varios.php";
+   include "menu.php";
 
    $id = $_GET['id'];
 
@@ -20,9 +24,77 @@
    $activo    = mysql_result($res, 0, "activo");
    $eliminado = mysql_result($res, 0, "eliminado");
 
-   echo "ID: $id <br>";
 
-   echo "
+   echo "<form name='forma01' method='post' action='modifica.php'>
+   
+         <table class='detalle'>
+           <tr>
+              <td class='col1'>
+                 ID:
+              </td>
+              <td>
+                 $id
+              </td>
+           </tr>
+           
+           <tr>
+              <td class='col1'>
+                 Nombre(s):
+              </td>
+              <td>
+                 <input type='text' name='nombre' id='nombre' placeholder='Escribe tu usuario' value='$nombre' />
+              </td>
+           </tr>
+           
+           <tr>
+              <td class='col1'>
+                 Apellido(s):
+              </td>
+              <td>
+              <input type='text' name='apellidos' id='apellidos' placeholder='Escribe tus apellidos' value='$apellidos' />
+              </td>
+           </tr>
+           
+           <tr>
+              <td class='col1'>
+                 Correo:
+              </td>
+              <td>
+              <input type='text' name='correo' id='correo' placeholder='Escribe tu correo' value='$correo' />
+              </td>
+           </tr>
+           
+           <tr>
+              <td class='col1'>
+                 Pass:
+              </td>
+              <td>
+              <input type='text' name='pass' id='pass' placeholder='Escribe tu password' value='$pass' />
+              </td>
+           </tr>
+           
+           <tr>
+              <td class='col1'>
+                 Imagen:
+              </td>
+              <td>
+              $imagen ¿Modificar?<br>
+              </td>
+           </tr>
+           
+           <tr>
+              <td colspan='2'>
+              <input type='hidden' name='id' id='id' value='$id' />
+              <input class='modifica' type='submit' value='Guardar cambios' name='boton1' id='boton1' onclick='validacion(); return false;' /> <br>
+              </td>
+           <tr>
+           
+         </table>
+         </form>";
+
+   //echo "ID: $id <br>";
+
+/*   echo "
    <form name='forma01' method='post' action='modifica.php'>
 
          Nombre: 
@@ -45,12 +117,7 @@
 
          <input type='submit' value='Guardar cambios' name='boton1' id='boton1' onclick='validacion(); return false;' /> <br>
 		 
-      </form> ";
-
-
-   echo "<br><br><a href='listado.php' > 
-            <input type=\"button\" value=\"Regresar al listado\" >
-         </a> ";
+      </form> ";*/
 ?>
 
 

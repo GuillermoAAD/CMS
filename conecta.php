@@ -2,8 +2,8 @@
 define("HOST",'localhost');
 define("BD",'catalogo');
 define("USER_BD",'root');
-//define("PASS_BD",'');
-define("PASS_BD",'root');
+define("PASS_BD",'');
+//define("PASS_BD",'root');
 
 /**/
 function conecta () {
