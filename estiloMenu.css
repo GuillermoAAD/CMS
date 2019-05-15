@@ -1,0 +1,62 @@
+/* Mesaje */
+
+.mensaje {
+   font-size: 20px;
+}
+
+.izquierda {
+    float: left;
+}
+
+.derecha {
+    float: right;
+   
+}
+
+
+.btnMenu {
+    width: 100%;
+    font-weight: bold;
+    font-size: 20px;
+    background: whitesmoke;
+}
+
+ 
+ .btnMenu:hover {
+    background: gainsboro;
+ }
+ 
+ .btnMenu:active {
+    background: gray;
+ }
+
+
+
+/* Listado */
+table {
+    text-align: left;
+    
+    /*border: 1px solid black;*/
+}
+
+/*td {
+    border: 1px solid gray;
+}*/
+
+
+
+
+ /* menu 
+
+.menu{
+   /*border: 1px solid black;*/
+   /*text-align: center;
+   width: 100%;
+   background-color: white;
+}
+.menu td {
+   border: 10px solid white;
+   background-color: black;
+   width: 1%;
+}
+*/

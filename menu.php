@@ -1,17 +1,49 @@
-<link rel="stylesheet" href="miEstilo.css" />
+<html>
+   <head>
+      <title>menu</title>
 
-<?php
-echo "Hola ";
-?>
+      <link rel="stylesheet" href="estiloMenu.css" /> 
 
-<hr>
+   </head>
 
-<table class="menu">
-   <tr>
-      <td class="link"><a href="principal.php">Inicio</a></td>
-      <td class="link"><a href="listado.php">Administradores</a></td>
-      <!--<td class="link"><a href=""></a></td>-->
-   </tr>
-</table>
+   <body>
+      
+      <nav class="contenedorMenu">
+         <div class="mensaje">
+            <div class="izquierda">
+               <?php
+                  echo "Hola ";
+               ?>
+            </div>
 
-<hr>
+            <div class="derecha">
+            <a href="login.php">Salir</a>
+            </div>
+         </div>
+         
+         <br> <br>
+
+         <table class="">
+            <tr class="">
+               <td class="">
+                  <a href="principal.php">
+                     <input class="btnMenu" type="button" value="Inicio">
+                  </a>
+               </td>
+               
+               <td class="">
+                  <a href="listado.php">
+                        <input class="btnMenu" type="button" value="Administradores">
+                  </a>
+               </td>
+               <!--<td class="link"><a href=""></a></td>-->
+            </tr>
+         </table>
+      
+
+      <hr>
+
+</nav>
+
+   </body>
+</html>

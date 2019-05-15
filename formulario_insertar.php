@@ -1,6 +1,12 @@
 <html>
    <head>
-      <title>Formulario</title>
+      <title>Insertar</title>
+
+      <link rel="stylesheet" href="estiloDetalle.css" />
+      <link rel="stylesheet" href="estiloBotones.css" />
+
+      <!--<script src="varios.js"> </script>-->
+
       <script>
          function validacion(){
 
@@ -8,7 +14,6 @@
             var apellidos = document.forma01.apellidos.value;
             var correo = document.forma01.correo.value;
             var pass = document.forma01.pass.value;
-            
 
          	if (nombre == "") {
                alert("Ingrese el nombre.");
@@ -27,30 +32,82 @@
             }
          }         
       </script>
+   
    </head>
 
    <body>
 
       <?php
          include "menu.php";
+
+         echo "<form name='forma01' method='post' action='inserta.php'>
+   
+                  <table class='detalle'>
+                     <tr>
+                        <td class='col1'>
+                           Nombre(s):
+                        </td>
+
+                        <td>
+                           <input class='dato' type='text' name='nombre' id='nombre' 
+                           placeholder='Escribe tu nombre(s)' value='' />
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td class='col1'>
+                           Apellido(s):
+                        </td>
+
+                        <td>
+                           <input class='dato' type='text' name='apellidos' id='apellidos' 
+                           placeholder='Escribe tu(s) apellidos(s)' value='' />
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td class='col1'>
+                           Correo:
+                        </td>
+
+                        <td>
+                           <input class='dato' type='text' name='correo' id='correo' 
+                           placeholder='Escribe tu correo' value='' />
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td class='col1'>
+                           Pass:
+                        </td>
+
+                        <td>
+                           <input class='dato' type='text' name='pass' id='pass' 
+                           placeholder='Escribe tu password' value='' />
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td class='col1'>
+                           Imagen:
+                        </td>
+                        
+                        <td>
+                           
+                        </td>
+                     </tr>
+                     
+                     <tr>
+                        <td colspan='2'>
+                           <input type='hidden' name='id' id='id' value='' />
+                           <input class='btnListado inserta' type='submit' value='Agregar' 
+                           name='boton1' id='boton1' onclick='validacion(); return false;' /> <br>
+                        </td>
+                     <tr>
+                     
+                  </table>
+                </form>";
       ?>
 
-      <form name="forma01" method="post" action="inserta.php">
-
-   	   <input type="text" name="nombre" id="nombre" placeholder="Escribe tu(s)  nombre(s)" /> <br>
-		   <input type="text" name="apellidos" id="apellidos" placeholder="Escribe tu(s) apellido(s)" /> <br>
-         <input type="text" name="correo" id="correo" placeholder="Escribe tu correo" /> <br>
-         <input type="text" name="pass" id="pass" placeholder="Escribe tu password" /> <br>
-
-		   <input type="submit" value="Entrar" name="boton1" id="boton1" onclick="validacion(); return false;" /> <br>
-		 
-      </form>
-
-
-      <br><br>
-      <a href='listado.php' > 
-         <input type="button" value="Regresar al listado" >
-      </a>
-      
    </body>
 </html>

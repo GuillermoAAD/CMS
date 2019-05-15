@@ -1,4 +1,5 @@
 <?php
+
 define("HOST",'localhost');
 define("BD",'catalogo');
 define("USER_BD",'root');
@@ -19,16 +20,18 @@ function conecta () {
 }
 
 function consulta($sql){
-
    $con = conecta();
-
    $res = mysql_query($sql, $con);
-   
    return $res;
 }
 
-function desconecta() {
+function numRegistros($res){
+   $con = conecta();
+   $num = mysql_num_rows($res);
+   return $num;
+}
 
+function desconecta() {
 }
 
 ?>

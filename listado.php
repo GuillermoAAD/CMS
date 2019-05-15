@@ -1,84 +1,96 @@
-<link rel="stylesheet" href="miEstilo.css" />
-<link rel="stylesheet" href="estiloBotones.css" />
+<html>
+   <head>
+      <title>Listado Administradores</title>
 
-<?php
-require "conecta.php";
-include "menu.php";
+      <link rel="stylesheet" href="miEstilo.css" />
+      <link rel="stylesheet" href="estiloBotones.css" />
 
-$id;
+   </head>
 
-$sql = "SELECT *
-        FROM administradores
-        WHERE activo = 1 AND eliminado = 0";
+   <body>
 
-$res = consulta($sql);
+      <?php
 
-$num = mysql_num_rows($res);
+         include "menu.php";
+         require "conecta.php";
 
+         $id;
 
-echo "<table id='tabla1' >";
-   echo "<tr>";
-      echo "<td colspan='4' >";
-         echo "<h1>Administradores: $num </h1> <hr>";
-      echo "</td>";
-   echo "</tr>";
+         $sql = "SELECT *
+                 FROM administradores
+                 WHERE activo = 1 AND eliminado = 0";
 
-   echo "<tr>";
-      echo "<td>";
-         echo "<a href='formulario_insertar.php'> 
-               <input class='inserta' type='button' value='Agregar un nuevo administrador' > 
-               </a>";
-      echo "</td>";
-   echo "</tr>";
-   
+         $res = consulta($sql);
 
-   for ($i = 0; $i < $num; $i++)
-   {
-   //echo "<tr id='Fila".$i."' >";
-
-      if ( $i % 2 != 0) {
-         echo "<tr id='Fila".$i."' class='blanco' >";
-      } else {
-         echo "<tr id='Fila".$i."' class='gris' >";
-      }
-/*
-      if ( $i % 2 != 0) {
-         echo "<td class='blanco' >";
-      } else {
-         echo "<td class='gris' >";
-      }*/
+         $num = numRegistros($res);
 
 
-      echo "<td>";
+         echo "<table id='tabla1' class='tabla1'>
+                  <tr>
+                  <td colspan='4' >
+                        <h1 class='numAdmins'>Administradores: $num </h1> <hr>
+                     </td>
+                  </tr>
 
-         $id        = mysql_result($res, $i, "id");
-         $nombre    = mysql_result($res, $i, "nombre");
-         $apellidos = mysql_result($res, $i, "apellidos");
-        
-         echo "<span class='nombreUsuario'> $nombre $apellidos</span><br>";
+                  <tr>
+                     <td>
+                        <a href='formulario_insertar.php'> 
+                        <input class='btnListado inserta' type='button' value='Agregar un nuevo administrador' > 
+                        </a>
+                     </td>
+                  </tr>";
+            
 
-      echo "</td>";
+            for ($i = 0; $i < $num; $i++)
+            {
+            // echo "<tr id='Fila".$i."' >";
 
-      echo "<td>";
-         echo "<a href='ver_detalle.php?id=$id'> 
-               <input class='ver' type='button' value='ver Detalles'>
-               </a>";
-      echo "</td>";
+               if ( $i % 2 != 0) {
+                  echo "<tr id='Fila".$i."' class='blanco' >";
+               } else {
+                  echo "<tr id='Fila".$i."' class='gris' >";
+               }
+         /*
+               if ( $i % 2 != 0) {
+                  echo "<td class='blanco' >";
+               } else {
+                  echo "<td class='gris' >";
+               }*/
 
-      echo "<td>";
-         echo "<a href='formulario_modifica.php?id=$id'> 
-               <input class='modifica' type='button' value='Modificar' >
-               </a>";
-      echo "</td>";
 
-      echo "<td>";
-         echo "<a href='elimina.php?id=$id'> 
-                  <input class='elimina' type='button' value='Eliminar'> 
-               </a>";
-      echo "</td>";
+               echo "<td>";
 
-   echo "</tr>";
-}
-echo "</table>";
+                  $id        = mysql_result($res, $i, "id");
+                  $nombre    = mysql_result($res, $i, "nombre");
+                  $apellidos = mysql_result($res, $i, "apellidos");
+               
+                  echo "<span class='nombreUsuario'> $nombre $apellidos</span><br>
 
-?>
+                     </td>
+
+                     <td>
+                        <a href='ver_detalle.php?id=$id'> 
+                        <input class='btnListado ver' type='button' value='Detalles'>
+                        </a>
+                     </td>
+
+                     <td>
+                        <a href='formulario_modifica.php?id=$id'> 
+                        <input class='btnListado modifica' type='button' value='Modificar' >
+                        </a>
+                     </td>
+
+                     <td>
+                        <a href='elimina.php?id=$id'> 
+                           <input class='btnListado elimina' type='button' value='Eliminar'> 
+                        </a>
+                     </td>
+
+                  </tr>";
+         }
+         echo "</table>";
+
+      ?>
+
+   </body>
+</html>

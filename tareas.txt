@@ -1,14 +1,14 @@
 
                       FUNCIONAL    CSS
-listado------------------OK--------50%
+listado------------------OK--------OK
 detalles-----------------OK--------OK
-insertar-----------------OK--------0%
+insertar-----------------OK--------OK
 eliminar-----------------OK--------OK
 modificar----------------OK--------OK
 
-login--------------------0%--------0
-principal----------------OK--------0
-menu---------------------OK--------0
+login--------------------50%--------OK
+principal----------------OK---------OK
+menu---------------------50%--------OK
 
 
 ### CONSULTAS SQL UTILES
@@ -20,3 +20,7 @@ WHERE activo=0 AND eliminado=1
 
 //para reiniciar el autoincrementable al ultimo  
 ALTER TABLE nombre_tabla AUTO_INCREMENT = '$ultimo_id';
+
+// Elimina inactivos y eliminados para siempre
+DELETE FROM administradores 
+WHERE activo=0 AND eliminado=1

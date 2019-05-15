@@ -1,6 +1,11 @@
+.numAdmins {
+    text-align: center;
+    
+    
+}
 
 /* Listado */
-table {
+.tabla1 {
     text-align: left;
     width: 100%;
     /*border: 1px solid black;*/
@@ -21,45 +26,3 @@ table {
 .gris {
     background-color: rgb(230, 230, 230); 
 }
-
-
- /* menu */
-
-.menu{
-   /*border: 1px solid black;*/
-   text-align: center;
-   width: 100%;
-}
-.menu td {
-   border: 5px solid white;
-   background-color: gray;
-   width: 1%;
-}
-
-.link{
-   text-decoration:none;
-   background-color:gainsboro;
-   
-   color:black;
-}
-
-.link:hover{
-   background-color:#333;
-   text-decoration:underline;
-   color:white;
-}
-
-
-/*.link, .link a:link, .link a:active, .link a:visited {
-   text-decoration:none;
-   background-color:gainsboro;
-   
-   color:black;
-   display:inline;
-   }
-   .link a:hover{
-   background-color:#333;
-   text-decoration:underline;
-   color:white;
-   /*display:inline;
-   }*/
