@@ -1,4 +1,8 @@
+<script src="JS/varios.js"></script>
+
 <?php
+
+session_start();
 
 require "conecta.php";
 
@@ -15,9 +19,19 @@ $res = consulta($sql);
 $num = numRegistros($res);
 
 if ($num == 0) {
-   header("Location: login.php");
+   echo "<script>
+           errorLogin();
+           location.href = 'login.php';
+        </script>";
+  
+        //sleep(5);
+
+   //header("Location: login.php");
 } else {
-   header("Location: principal.php");
+   $nombre    = mysql_result($res, 0, "nombre");
+
+   $_SESSION["SesionUsuario"] = $nombre;
+   header("Location: Principal/principal.php");
 }
       
 ?>

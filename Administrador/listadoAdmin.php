@@ -2,8 +2,8 @@
    <head>
       <title>Listado Administradores</title>
 
-      <link rel="stylesheet" href="miEstilo.css" />
-      <link rel="stylesheet" href="estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/miEstilo.css" />
+      <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
    </head>
 
@@ -11,8 +11,15 @@
 
       <?php
 
-         include "menu.php";
-         require "conecta.php";
+      //require "../sesion.php";
+      //if ( sesionActiva() ) {
+
+      session_start();
+
+      if (isset($_SESSION["SesionUsuario"])) {
+
+         include "../Menu/menu.php";
+         require "../conecta.php";
 
          $id;
 
@@ -89,6 +96,12 @@
                   </tr>";
          }
          echo "</table>";
+
+      } else {
+         echo "<script>
+                  location.href = '../login.php';
+               </script>";
+      }
 
       ?>
 

@@ -2,16 +2,24 @@
    <head>
       <title>Detalles</title>
 
-      <link rel="stylesheet" href="estiloDetalle.css" />
-      <link rel="stylesheet" href="estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/estiloDetalle.css" />
+      <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
    </head>
 
    <body>
 
       <?php
-         require "conecta.php";
-         include "menu.php";
+
+      //require "../sesion.php";
+      //if ( sesionActiva() ) {
+
+         session_start();
+
+         if (isset($_SESSION["SesionUsuario"])) {
+
+         require "../conecta.php";
+         include "../Menu/menu.php";
 
          $id = $_GET['id'];
 
@@ -69,6 +77,12 @@
                <tr>
                
                </table>";
+
+      } else {
+         echo "<script>
+                  location.href = '../login.php';
+               </script>";
+      }
 
       ?>
 

@@ -2,8 +2,8 @@
    <head>
       <title>Modificar</title>
 
-      <link rel="stylesheet" href="estiloDetalle.css" />
-      <link rel="stylesheet" href="estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/estiloDetalle.css" />
+      <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
       <!-- <script src="JSA7.js"> </script> -->
 
@@ -38,8 +38,15 @@
 
       <?php
 
-         include "menu.php";
-         require "conecta.php";
+      //require "../sesion.php";
+      //if ( sesionActiva() ) {
+
+      session_start();
+
+      if (isset($_SESSION["SesionUsuario"])) {
+
+         include "../Menu/menu.php";
+         require "../conecta.php";
 
          $id = $_GET['id'];
 
@@ -135,6 +142,12 @@
                      
                   </table>
                </form>";
+
+      } else {
+         echo "<script>
+                  location.href = '../login.php';
+               </script>";
+      }
       ?>
    </body>
 </html>

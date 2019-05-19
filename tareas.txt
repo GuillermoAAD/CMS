@@ -1,14 +1,22 @@
 
                       FUNCIONAL    CSS
+Administrador
 listado------------------OK--------OK
 detalles-----------------OK--------OK
 insertar-----------------OK--------OK
 eliminar-----------------OK--------OK
 modificar----------------OK--------OK
 
-login--------------------50%--------OK
-principal----------------OK---------OK
-menu---------------------50%--------OK
+login--------------------OK--------OK
+principal----------------OK--------OK
+menu---------------------OK--------OK
+
+Producto
+listado------------------0%--------OK
+detalles-----------------0%--------OK
+insertar-----------------0%--------OK
+eliminar-----------------0%--------OK
+modificar----------------0%--------OK
 
 
 ### CONSULTAS SQL UTILES

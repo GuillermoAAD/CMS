@@ -2,8 +2,8 @@
    <head>
       <title>Insertar</title>
 
-      <link rel="stylesheet" href="estiloDetalle.css" />
-      <link rel="stylesheet" href="estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/estiloDetalle.css" />
+      <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
       <!--<script src="varios.js"> </script>-->
 
@@ -38,7 +38,15 @@
    <body>
 
       <?php
-         include "menu.php";
+
+      //require "../sesion.php";
+      //if ( sesionActiva() ) {
+
+      session_start();
+
+      if (isset($_SESSION["SesionUsuario"])) {
+      
+         include "../Menu/menu.php";
 
          echo "<form name='forma01' method='post' action='inserta.php'>
    
@@ -107,6 +115,12 @@
                      
                   </table>
                 </form>";
+
+      } else {
+         echo "<script>
+                  location.href = '../login.php';
+               </script>";
+      }
       ?>
 
    </body>

@@ -2,6 +2,8 @@
    <head>
       <title>Login</title>
       <link rel='stylesheet' href='CSS/estiloLogin.css' />
+
+      
       <script>
          function validacion(){
             var correo = document.forma01.correo.value;
@@ -46,7 +48,7 @@
 
                <tr>
                   <td>
-                     <input type='text' name='correo' id='correo' placeholder='Escribe tu correo' />
+                     <input type='text' name='correo' id='correo' placeholder='Escribe tu correo(7)' />
                   </td>
                </tr>
 
@@ -58,7 +60,7 @@
 
                <tr>
                   <td>
-                     <input type='text' name='pass' id='pass' placeholder='Escribe tu password' />
+                     <input type='text' name='pass' id='pass' placeholder='Escribe tu password(7)' />
                   </td>
                </tr>
 

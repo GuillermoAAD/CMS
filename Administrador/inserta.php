@@ -1,6 +1,13 @@
 <?php
 
-require "conecta.php";
+//require "../sesion.php";
+//if ( sesionActiva() ) {
+
+session_start();
+
+if (isset($_SESSION["SesionUsuario"])) {
+
+require "../conecta.php";
 
 $nombre    = $_REQUEST['nombre'];
 $apellidos = $_REQUEST['apellidos'];
@@ -17,6 +24,12 @@ $sql = "INSERT INTO administradores
 
 $res = consulta($sql);
    
-header("Location: listado.php");
+header("Location: listadoAdmin.php");
+
+} else {
+   echo "<script>
+            location.href = '../login.php';
+         </script>";
+}
 
 ?>
