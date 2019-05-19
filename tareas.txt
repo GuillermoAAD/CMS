@@ -2,21 +2,21 @@
                       FUNCIONAL    CSS
 Administrador
 listado------------------OK--------OK
-detalles-----------------OK--------OK
-insertar-----------------OK--------OK
+detalles-----------------90%--------OK
+insertar-----------------90%--------OK
 eliminar-----------------OK--------OK
-modificar----------------OK--------OK
+modificar----------------90%--------OK
 
 login--------------------OK--------OK
 principal----------------OK--------OK
 menu---------------------OK--------OK
 
 Producto
-listado------------------0%--------OK
-detalles-----------------0%--------OK
-insertar-----------------0%--------OK
-eliminar-----------------0%--------OK
-modificar----------------0%--------OK
+listado------------------OK--------OK
+detalles-----------------90%--------OK
+insertar-----------------90%--------OK
+eliminar-----------------OK--------OK
+modificar----------------90%--------OK
 
 
 ### CONSULTAS SQL UTILES
@@ -30,5 +30,9 @@ WHERE activo=0 AND eliminado=1
 ALTER TABLE nombre_tabla AUTO_INCREMENT = '$ultimo_id';
 
 // Elimina inactivos y eliminados para siempre
-DELETE FROM administradores 
+DELETE FROM nombre_tabla 
 WHERE activo=0 AND eliminado=1
+
+
+//SUBIR IMAGENEs
+https://www.baulphp.com/cargar-y-almacenar-imagen-en-mysql-php/

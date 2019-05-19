@@ -70,7 +70,7 @@
                      
                      if ($archivo_actual != "listadoProducto.php"){
 
-                        echo "<a href='../Producto/'>
+                        echo "<a href='../Producto/ListadoProducto.php'>
                                  <input class='btnMenu' type='button' value='Productos'>
                               </a>";
                      } else {

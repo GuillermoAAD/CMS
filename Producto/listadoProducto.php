@@ -1,6 +1,6 @@
 <html>
    <head>
-      <title>Listado Administradores</title>
+      <title>Listado Productos</title>
 
       <link rel="stylesheet" href="../CSS/miEstilo.css" />
       <link rel="stylesheet" href="../CSS/estiloBotones.css" />
@@ -24,7 +24,7 @@
          $id;
 
          $sql = "SELECT *
-                 FROM administradores
+                 FROM productos
                  WHERE activo = 1 AND eliminado = 0";
 
          $res = consulta($sql);
@@ -34,17 +34,30 @@
 
          echo "<table id='tabla1' class='tabla1'>
                   <tr>
-                     <td colspan='4' >
-                        <h1 class='numAdmins'>Administradores: $num </h1> <hr>
+                     <td colspan='6' >
+                        <h1 class='numAdmins'>Productos: $num </h1> <hr>
                      </td>
                   </tr>
 
                   <tr>
                      <!--<td></td>-->
-                     <td colspan='4'>
-                        <a href='formulario_insertar.php'> 
-                        <input class='btnListado inserta' type='button' value='Agregar un nuevo administrador' > 
+                     <td colspan='6'>
+                        <a href='formulario_insertarProducto.php'> 
+                        <input class='btnListado inserta' type='button' value='Agregar un nuevo Producto' > 
                         </a>
+                     </td>
+                  </tr>
+
+
+                  <tr>
+                     <td>
+                        Nombre
+                     </td>
+                     <td>
+                        Costo
+                     </td>
+                     <td>
+                        Stock
                      </td>
                   </tr>";
             
@@ -65,31 +78,37 @@
                   echo "<td class='gris' >";
                }*/
 
+               $id        = mysql_result($res, $i, "id");
+               $nombre    = mysql_result($res, $i, "nombre");
+               $costo = mysql_result($res, $i, "costo");
+               $stock = mysql_result($res, $i, "stock");
 
-               echo "<td>";
+               echo "<td>
+                        <span class='nombreUsuario'>$nombre</span><br>
+                     </td>";
 
-                  $id        = mysql_result($res, $i, "id");
-                  $nombre    = mysql_result($res, $i, "nombre");
-                  $apellidos = mysql_result($res, $i, "apellidos");
-               
-                  echo "<span class='nombreUsuario'> $nombre $apellidos</span><br>
+               echo "<td>
+                        <span class='nombreUsuario'>$costo</span><br>
+                     </td>";
 
-                     </td>
+               echo "<td>
+                        <span class='nombreUsuario'>$stock</span><br>
+                     </td>";
 
-                     <td>
-                        <a href='ver_detalle.php?id=$id'> 
+               echo "<td>
+                        <a href='ver_detalleProducto.php?id=$id'> 
                         <input class='btnListado ver' type='button' value='Detalles'>
                         </a>
                      </td>
 
                      <td>
-                        <a href='formulario_modifica.php?id=$id'> 
+                        <a href='formulario_modificaProducto.php?id=$id'> 
                         <input class='btnListado modifica' type='button' value='Modificar' >
                         </a>
                      </td>
 
                      <td>
-                        <a href='elimina.php?id=$id'> 
+                        <a href='eliminaProducto.php?id=$id'> 
                            <input class='btnListado elimina' type='button' value='Eliminar'> 
                         </a>
                      </td>

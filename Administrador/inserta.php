@@ -14,13 +14,24 @@ $apellidos = $_REQUEST['apellidos'];
 $correo    = $_REQUEST['correo'];
 $pass      = $_REQUEST['pass'];
 $passMD5   = md5($pass);
-// $imagen    = $_REQUEST['imagen'];
+//$imagen    = $_REQUEST['imagen'];
+$imagenNombre    = $_FILES['imagen']['name'];
+$imagenArchivo    = $_FILES['imagen']['tmp_name'];
 $activo    = 1;
 $eliminado = 0;
+
+
+$imagenRuta = "imgAdmin/$imagenNombre";
+
+
+
+move_uploaded_file($imagenArchivo, $imagenRuta);
+
+
    
 $sql = "INSERT INTO administradores 
         (id, nombre, apellidos, correo, pass, imagen, activo, eliminado) 
-        VALUES (NULL, '$nombre', '$apellidos', '$correo', '$passMD5', '$imagen', $activo, $eliminado)";
+        VALUES (NULL, '$nombre', '$apellidos', '$correo', '$passMD5', '$imagenArchivo', $activo, $eliminado)";
 
 $res = consulta($sql);
    

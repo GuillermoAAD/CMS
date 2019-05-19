@@ -9,28 +9,32 @@
 
       <script>
          function validacion(){
-
             var nombre = document.forma01.nombre.value;
-            var apellidos = document.forma01.apellidos.value;
-            var correo = document.forma01.correo.value;
-            var pass = document.forma01.pass.value;
+            var codigo = document.forma01.codigo.value;
+            var descripcion = document.forma01.descripcion.value;
+            var costo = document.forma01.costo.value;
+            //var imagen = document.forma01.imagen.value;
+            var stock = document.forma01.stock.value;
 
          	if (nombre == "") {
                alert("Ingrese el nombre.");
             }
-         	else if (apellidos == "") {
-               alert("Ingrese los apellidos.");
+         	else if (codigo == "") {
+               alert("Ingrese el codigo.");
             }
-         	else if (correo == "") {
-               alert("Ingrese el correo.");
+         	else if (descripcion == "") {
+               alert("Ingrese una descripcion.");
             }
-         	else if (pass == "") {
-               alert("Ingrese un password.");
+         	else if (costo == "") {
+               alert("Ingrese el costo.");
+            }
+         	else if (stock == "") {
+               alert("Ingrese el stock.");
             } else {
-               alert("Se ha agregado a " + nombre + " a la base de datos.");
+               alert("El Producto " + nombre + " ha sido agregado.");
                document.forma01.submit();
             }
-         }         
+         }        
       </script>
    
    </head>
@@ -48,50 +52,50 @@
       
          include "../Menu/menu.php";
 
-         echo "<form name='forma01' method='post' action='inserta.php'>
+         echo "<form name='forma01' method='post' action='insertaProducto.php'>
    
                   <table class='detalle'>
                      <tr>
                         <td class='col1'>
-                           Nombre(s):
+                           Nombre:
                         </td>
 
                         <td>
                            <input class='dato' type='text' name='nombre' id='nombre' 
-                           placeholder='Escribe tu nombre(s)' value='' />
+                           placeholder='Escribe el nombre' value='' />
                         </td>
                      </tr>
                      
                      <tr>
                         <td class='col1'>
-                           Apellido(s):
+                           Codigo:
                         </td>
 
                         <td>
-                           <input class='dato' type='text' name='apellidos' id='apellidos' 
-                           placeholder='Escribe tu(s) apellidos(s)' value='' />
+                           <input class='dato' type='text' name='codigo' id='codigo' 
+                           placeholder='Escribe el codigo' value='' />
                         </td>
                      </tr>
                      
                      <tr>
                         <td class='col1'>
-                           Correo:
+                           Descripcion:
                         </td>
 
                         <td>
-                           <input class='dato' type='text' name='correo' id='correo' 
-                           placeholder='Escribe tu correo' value='' />
+                           <input class='dato' type='text' name='descripcion' id='descripcion' 
+                           placeholder='Escribe unas descripcion' value='' />
                         </td>
                      </tr>
                      
                      <tr>
                         <td class='col1'>
-                           Pass:
+                           Costo:
                         </td>
 
                         <td>
-                           <input class='dato' type='text' name='pass' id='pass' 
-                           placeholder='Escribe tu password' value='' />
+                           <input class='dato' type='text' name='costo' id='costo' 
+                           placeholder='Escribe el costo' value='' />
                         </td>
                      </tr>
                      
@@ -102,6 +106,17 @@
                         
                         <td>
                            <input type='file' class='' id='imagen' name='imagen'>
+                        </td>
+                     </tr>
+
+                     <tr>
+                        <td class='col1'>
+                           Stock:
+                        </td>
+
+                        <td>
+                           <input class='dato' type='text' name='stock' id='stock' 
+                           placeholder='Escribe el stock' value='' />
                         </td>
                      </tr>
                      
