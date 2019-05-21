@@ -5,6 +5,10 @@
       <link rel="stylesheet" href="../CSS/miEstilo.css" />
       <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
+      <!--Lo siguiente es para borrar con jquery-->
+      <script type="text/javascript" src="../JS/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="../JS/eliminar.js"></script>
+
    </head>
 
    <body>
@@ -48,7 +52,6 @@
                      </td>
                   </tr>
 
-
                   <tr>
                      <td>
                         Nombre
@@ -67,9 +70,9 @@
             // echo "<tr id='Fila".$i."' >";
 
                if ( $i % 2 != 0) {
-                  echo "<tr id='Fila".$i."' class='blanco' >";
+                  echo "<tr id='fila".$i."' class='blanco' >";
                } else {
-                  echo "<tr id='Fila".$i."' class='gris' >";
+                  echo "<tr id='fila".$i."' class='gris' >";
                }
          /*
                if ( $i % 2 != 0) {
@@ -78,17 +81,17 @@
                   echo "<td class='gris' >";
                }*/
 
-               $id        = mysql_result($res, $i, "id");
-               $nombre    = mysql_result($res, $i, "nombre");
-               $costo = mysql_result($res, $i, "costo");
-               $stock = mysql_result($res, $i, "stock");
+               $id     = mysql_result($res, $i, "id");
+               $nombre = mysql_result($res, $i, "nombre");
+               $costo  = mysql_result($res, $i, "costo");
+               $stock  = mysql_result($res, $i, "stock");
 
                echo "<td>
                         <span class='nombreUsuario'>$nombre</span><br>
                      </td>";
 
                echo "<td>
-                        <span class='nombreUsuario'>$costo</span><br>
+                        <span class='nombreUsuario'>$ $costo</span><br>
                      </td>";
 
                echo "<td>
@@ -107,9 +110,17 @@
                         </a>
                      </td>
 
+                     <!--
                      <td>
                         <a href='eliminaProducto.php?id=$id'> 
                            <input class='btnListado elimina' type='button' value='Eliminar'> 
+                        </a>
+                     </td>
+                     -->
+
+                     <td>
+                        <a href='javascript:void(0);'> 
+                           <input class='btnListado elimina' type='button' value='Eliminar' onClick='eliminarProducto($i,$id,\"$nombre\")' > 
                         </a>
                      </td>
 

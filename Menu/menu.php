@@ -51,8 +51,7 @@
                   echo "
                   </td>
                   
-                  <td class=''>
-                  ";
+                  <td class=''>";
                      
                      if ($archivo_actual != "listadoAdmin.php"){
 
@@ -70,7 +69,7 @@
                      
                      if ($archivo_actual != "listadoProducto.php"){
 
-                        echo "<a href='../Producto/ListadoProducto.php'>
+                        echo "<a href='../Producto/listadoProducto.php'>
                                  <input class='btnMenu' type='button' value='Productos'>
                               </a>";
                      } else {
@@ -79,6 +78,7 @@
 
                      echo "
                   </td>
+
                   <!--<td class='link'><a href=''></a></td>-->
                </tr>
             </table>

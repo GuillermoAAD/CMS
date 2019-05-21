@@ -18,11 +18,18 @@ insertar-----------------90%--------OK
 eliminar-----------------OK--------OK
 modificar----------------90%--------OK
 
+eliminarJQUERY-----------OK
+subirIMAGEN--------------0%--------0%
+
 
 ### CONSULTAS SQL UTILES
 
 // todos vuelven a estar activos y deseliminados
 UPDATE administradores 
+SET activo=1, eliminado=0 
+WHERE activo=0 AND eliminado=1
+
+UPDATE productos 
 SET activo=1, eliminado=0 
 WHERE activo=0 AND eliminado=1
 
@@ -36,3 +43,10 @@ WHERE activo=0 AND eliminado=1
 
 //SUBIR IMAGENEs
 https://www.baulphp.com/cargar-y-almacenar-imagen-en-mysql-php/
+
+
+
+HECHO EN ESTA VERSION
+ajustando a requerimientos solicitados
+eliminación de administrador y producto con jQuery
+Mas logos

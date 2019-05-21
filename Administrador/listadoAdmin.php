@@ -5,6 +5,10 @@
       <link rel="stylesheet" href="../CSS/miEstilo.css" />
       <link rel="stylesheet" href="../CSS/estiloBotones.css" />
 
+      <!--Lo siguiente es para borrar con jquery-->
+      <script type="text/javascript" src="../JS/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="../JS/eliminar.js"></script>
+
    </head>
 
    <body>
@@ -34,17 +38,26 @@
 
          echo "<table id='tabla1' class='tabla1'>
                   <tr>
-                     <td colspan='4' >
+                     <td colspan='5' >
                         <h1 class='numAdmins'>Administradores: $num </h1> <hr>
                      </td>
                   </tr>
 
                   <tr>
                      <!--<td></td>-->
-                     <td colspan='4'>
+                     <td colspan='5'>
                         <a href='formulario_insertar.php'> 
                         <input class='btnListado inserta' type='button' value='Agregar un nuevo administrador' > 
                         </a>
+                     </td>
+                  </tr>
+                  
+                  <tr>
+                     <td>
+                        Nombre Completo
+                     </td>
+                     <td>
+                        Correo
                      </td>
                   </tr>";
             
@@ -54,9 +67,9 @@
             // echo "<tr id='Fila".$i."' >";
 
                if ( $i % 2 != 0) {
-                  echo "<tr id='Fila".$i."' class='blanco' >";
+                  echo "<tr id='fila".$i."' class='blanco' >";
                } else {
-                  echo "<tr id='Fila".$i."' class='gris' >";
+                  echo "<tr id='fila".$i."' class='gris' >";
                }
          /*
                if ( $i % 2 != 0) {
@@ -66,16 +79,20 @@
                }*/
 
 
-               echo "<td>";
-
                   $id        = mysql_result($res, $i, "id");
                   $nombre    = mysql_result($res, $i, "nombre");
                   $apellidos = mysql_result($res, $i, "apellidos");
+                  $correo = mysql_result($res, $i, "correo");
+
+                  echo "<td>
+                        <span class=''>$nombre $apellidos</span><br>
+                     </td>";
+
+                  echo "<td>
+                        <span class=''>$correo</span><br>
+                     </td>";
                
-                  echo "<span class='nombreUsuario'> $nombre $apellidos</span><br>
-
-                     </td>
-
+                  echo "
                      <td>
                         <a href='ver_detalle.php?id=$id'> 
                         <input class='btnListado ver' type='button' value='Detalles'>
@@ -88,9 +105,17 @@
                         </a>
                      </td>
 
+                     <!--
                      <td>
                         <a href='elimina.php?id=$id'> 
                            <input class='btnListado elimina' type='button' value='Eliminar'> 
+                        </a>
+                     </td>
+                     -->
+
+                     <td>
+                        <a href='javascript:void(0);'> 
+                           <input class='btnListado elimina' type='button' value='Eliminar' onClick='eliminarAdministrador($i,$id,\"$nombre\")' > 
                         </a>
                      </td>
 
