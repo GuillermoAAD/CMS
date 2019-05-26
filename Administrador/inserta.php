@@ -1,46 +1,58 @@
 <?php
 
-//require "../sesion.php";
-//if ( sesionActiva() ) {
+   //require "../sesion.php";
+   //if ( sesionActiva() ) {
 
-session_start();
+   session_start();
 
-if (isset($_SESSION["SesionUsuario"])) {
+   if (isset($_SESSION["SesionUsuario"])) {
 
-require "../conecta.php";
+   require "../conecta.php";
 
-$nombre    = $_REQUEST['nombre'];
-$apellidos = $_REQUEST['apellidos'];
-$correo    = $_REQUEST['correo'];
-$pass      = $_REQUEST['pass'];
-$passMD5   = md5($pass);
-//$imagen    = $_REQUEST['imagen'];
-$imagenNombre    = $_FILES['imagen']['name'];
-$imagenArchivo    = $_FILES['imagen']['tmp_name'];
-$activo    = 1;
-$eliminado = 0;
-
-
-$imagenRuta = "imgAdmin/$imagenNombre";
+   $nombre    = $_REQUEST['nombre'];
+   $apellidos = $_REQUEST['apellidos'];
+   $correo    = $_REQUEST['correo'];
+   $pass      = $_REQUEST['pass'];
+   $passMD5   = md5($pass);
+   //$imagen    = $_REQUEST['imagen'];
 
 
 
-move_uploaded_file($imagenArchivo, $imagenRuta);
+   $activo    = 1;
+   $eliminado = 0;
 
 
-   
-$sql = "INSERT INTO administradores 
-        (id, nombre, apellidos, correo, pass, imagen, activo, eliminado) 
-        VALUES (NULL, '$nombre', '$apellidos', '$correo', '$passMD5', '$imagenArchivo', $activo, $eliminado)";
+   $file_name = $_FILES['imagen']['name'];	//Nombre real del archivo
+   $file_tmp  = $_FILES['imagen']['tmp_name'];//Nombre temporal del archivo
+   $cadena    = explode(".", $file_name);		//Separa el nombre para obtener la extension
+   $ext       = $cadena[1];					//Extension
+   $dir       = "imgAdmin/";					//carpeta donde se guardan los archivos
+   $file_enc  = md5_file($file_tmp);	
 
-$res = consulta($sql);
-   
-header("Location: listadoAdmin.php");
+   $img;//Nombre de la ruta
 
-} else {
+   if ($file_name != '') {
+      $fileName1  = "$file_enc.$ext";	
+      $img = "$fileName1";
+      @copy($file_tmp, $dir.$fileName1);	
+   }
+
+        
+   $sql = "INSERT INTO administradores(id, nombre, apellidos, correo, pass, imagen, activo, eliminado) 
+           VALUES (NULL, '$nombre', '$apellidos', '$correo', '$passMD5', '$img', $activo, $eliminado)";
+
+   $res = consulta($sql);
+   //echo "consulta $sql<br>";
+   //echo "RES $RES<br>";
+        
    echo "<script>
-            location.href = '../login.php';
+            location.href = 'listadoAdmin.php';
          </script>";
-}
+
+   } else {
+      echo "<script>
+               location.href = '../login.php';
+            </script>";
+   }
 
 ?>

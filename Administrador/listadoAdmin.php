@@ -85,11 +85,11 @@
                   $correo = mysql_result($res, $i, "correo");
 
                   echo "<td>
-                        <span class=''>$nombre $apellidos</span><br>
+                        <span class='nombreUsuario'>$nombre $apellidos</span><br>
                      </td>";
 
                   echo "<td>
-                        <span class=''>$correo</span><br>
+                        <span class='nombreUsuario'>$correo</span><br>
                      </td>";
                
                   echo "

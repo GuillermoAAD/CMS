@@ -30,7 +30,7 @@
                </div>
 
                <div class='derecha'>
-               <a href='../logout.php'>Salir</a>
+               <a href='../logout.php?".SID."'>Salir</a>
                </div>
             </div>
             
@@ -41,7 +41,7 @@
                   <td class=''>";
                   if ($archivo_actual != "principal.php"){
 
-                     echo "<a href='../Principal/principal.php'>
+                     echo "<a href='../Principal/principal.php?".SID."'>
                               <input class='btnMenu' type='button' value='Inicio'>
                            </a>";
                   } else {
@@ -55,7 +55,7 @@
                      
                      if ($archivo_actual != "listadoAdmin.php"){
 
-                        echo "<a href='../Administrador/listadoAdmin.php'>
+                        echo "<a href='../Administrador/listadoAdmin.php?".SID."'>
                                  <input class='btnMenu' type='button' value='Administradores'>
                               </a>";
                      } else {
@@ -69,7 +69,7 @@
                      
                      if ($archivo_actual != "listadoProducto.php"){
 
-                        echo "<a href='../Producto/listadoProducto.php'>
+                        echo "<a href='../Producto/listadoProducto.php?".SID."'>
                                  <input class='btnMenu' type='button' value='Productos'>
                               </a>";
                      } else {

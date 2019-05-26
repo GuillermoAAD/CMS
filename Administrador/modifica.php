@@ -1,11 +1,8 @@
 <?php
 
-   //require "../sesion.php";
-   //if ( sesionActiva() ) {
+session_start();
 
-   session_start();
-
-   if (isset($_SESSION["SesionUsuario"])) {
+if (isset($_SESSION["SesionUsuario"])) {
 
    require "../conecta.php";
    
@@ -24,9 +21,15 @@
            pass='$passMD5'
            WHERE id='$id' ";
 
+  // echo "SQL <br> $sql";
+
    $res = consulta($sql);
 
-   header("Location: listadoAdmin.php");
+   //echo "res <br> $res";
+
+   echo "<script>
+            location.href = 'listadoAdmin.php';
+         </script>";
 
 } else {
    echo "<script>

@@ -4,6 +4,7 @@
 
       <link rel="stylesheet" href="../CSS/estiloDetalle.css" />
       <link rel="stylesheet" href="../CSS/estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/estiloImg.css" />
 
       <!-- <script src="JSA7.js"> </script> -->
 
@@ -13,7 +14,6 @@
             var codigo = document.forma01.codigo.value;
             var descripcion = document.forma01.descripcion.value;
             var costo = document.forma01.costo.value;
-            //var imagen = document.forma01.imagen.value;
             var stock = document.forma01.stock.value;
 
          	if (nombre == "") {
@@ -134,7 +134,7 @@
                         </td>
 
                         <td>
-                           $imagen ¿Modificar?<br>
+                           <img class='imagen' src='imgProducto/$imagen' ></img>
                         </td>
                      </tr>
 

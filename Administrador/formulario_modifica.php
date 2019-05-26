@@ -4,6 +4,7 @@
 
       <link rel="stylesheet" href="../CSS/estiloDetalle.css" />
       <link rel="stylesheet" href="../CSS/estiloBotones.css" />
+      <link rel="stylesheet" href="../CSS/estiloImg.css" />
 
       <!-- <script src="JSA7.js"> </script> -->
 
@@ -65,7 +66,7 @@
          $eliminado = mysql_result($res, 0, "eliminado");
 
 
-         echo "<form name='forma01' method='post' action='modifica.php'>
+         echo "<form name='forma01' method='post' action='modifica.php' >
 
                   <table class='detalle'>
                      <tr>
@@ -127,8 +128,17 @@
                            Imagen:
                         </td>
 
-                        <td>
-                           $imagen ¿Modificar?<br>
+                        <td>";
+                           //$imagen ¿Modificar?<br>
+
+                           //if ($imagen != '') {
+                              echo "<img class='imagen' src='imgAdmin/$imagen' ></img>";
+                          // } else {
+                              //if ($imagen == '') {
+                          //    echo "<input type='file' class='' id='imagen' name='imagen' required />";
+                           //}
+
+                           echo "
                         </td>
                      </tr>
                      

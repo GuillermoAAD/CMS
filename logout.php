@@ -25,7 +25,11 @@ unset($_SESSION["SesionUsuario"]);
 
 
 session_destroy();
-header("Location: index.php");
+
+echo "<script>
+           location.href = 'index.php';
+        </script>";
+//header("Location: index.php");
 exit;
 
 ?>

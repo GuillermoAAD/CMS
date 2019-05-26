@@ -2,10 +2,10 @@
                       FUNCIONAL    CSS
 Administrador
 listado------------------OK--------OK
-detalles-----------------90%--------OK
-insertar-----------------90%--------OK
+detalles-----------------OK--------OK
+insertar-----------------OK--------OK
 eliminar-----------------OK--------OK
-modificar----------------90%--------OK
+modificar----------------OK--------OK
 
 login--------------------OK--------OK
 principal----------------OK--------OK
@@ -13,13 +13,13 @@ menu---------------------OK--------OK
 
 Producto
 listado------------------OK--------OK
-detalles-----------------90%--------OK
-insertar-----------------90%--------OK
+detalles-----------------OK--------OK
+insertar-----------------OK--------OK
 eliminar-----------------OK--------OK
-modificar----------------90%--------OK
+modificar----------------OK--------OK
 
 eliminarJQUERY-----------OK
-subirIMAGEN--------------0%--------0%
+subirIMAGEN--------------OK--------OK
 
 
 ### CONSULTAS SQL UTILES

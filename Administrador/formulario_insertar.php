@@ -14,6 +14,7 @@
             var apellidos = document.forma01.apellidos.value;
             var correo = document.forma01.correo.value;
             var pass = document.forma01.pass.value;
+            var imagen = document.forma01.imagen.value;
 
          	if (nombre == "") {
                alert("Ingrese el nombre.");
@@ -26,8 +27,11 @@
             }
          	else if (pass == "") {
                alert("Ingrese un password.");
-            } else {
-               alert("Se ha agregado a " + nombre + " a la base de datos.");
+            }
+            else if (imagen == "") {
+               alert("Seleccione una imagen.");
+            }  else {
+               //alert("Se ha agregado a " + nombre + " a la base de datos.");
                document.forma01.submit();
             }
          }         
@@ -48,7 +52,7 @@
       
          include "../Menu/menu.php";
 
-         echo "<form name='forma01' method='post' action='inserta.php'>
+         echo "<form name='forma01' method='post' action='inserta.php'  enctype='multipart/form-data'>
    
                   <table class='detalle'>
                      <tr>
@@ -101,7 +105,7 @@
                         </td>
                         
                         <td>
-                           <input type='file' class='' id='imagen' name='imagen'>
+                           <input type='file' class='' id='imagen' name='imagen' required />
                         </td>
                      </tr>
                      

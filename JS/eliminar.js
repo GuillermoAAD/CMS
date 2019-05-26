@@ -22,7 +22,7 @@ function eliminarAdministrador(idFila,id,nombre) {
 
 function eliminarProducto(idFila,id,nombre) {
    var confirmacion;
-   confirmacion = confirm("¿Desea eliminar el registro del producto "+nombre+"?");
+   confirmacion = confirm("sDesea eliminar el registro del producto "+nombre+"?");
    if ( confirmacion ) {
       $('#fila'+idFila).hide();
 

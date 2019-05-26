@@ -13,7 +13,7 @@
             var codigo = document.forma01.codigo.value;
             var descripcion = document.forma01.descripcion.value;
             var costo = document.forma01.costo.value;
-            //var imagen = document.forma01.imagen.value;
+            var imagen = document.forma01.imagen.value;
             var stock = document.forma01.stock.value;
 
          	if (nombre == "") {
@@ -28,10 +28,13 @@
          	else if (costo == "") {
                alert("Ingrese el costo.");
             }
-         	else if (stock == "") {
+            else if (imagen == "") {
+               alert("Seleccione una imagen.");
+            }
+            else if (stock == "") {
                alert("Ingrese el stock.");
             } else {
-               alert("El Producto " + nombre + " ha sido agregado.");
+               //alert("El Producto " + nombre + " ha sido agregado.");
                document.forma01.submit();
             }
          }        
@@ -52,7 +55,7 @@
       
          include "../Menu/menu.php";
 
-         echo "<form name='forma01' method='post' action='insertaProducto.php'>
+         echo "<form name='forma01' method='post' action='insertaProducto.php' enctype='multipart/form-data'>
    
                   <table class='detalle'>
                      <tr>
@@ -115,7 +118,7 @@
                         </td>
 
                         <td>
-                           <input class='dato' type='text' name='stock' id='stock' 
+                           <input class='dato' type='number' name='stock' id='stock' 
                            placeholder='Escribe el stock' value='' />
                         </td>
                      </tr>

@@ -31,7 +31,12 @@ if ($num == 0) {
    $nombre    = mysql_result($res, 0, "nombre");
 
    $_SESSION["SesionUsuario"] = $nombre;
-   header("Location: Principal/principal.php");
+
+   echo "<script>
+//           location.href = 'Principal/principal.php';
+           location.href = 'Principal/principal.php?".SID."';
+        </script>";
+  // header("Location: Principal/principal.php");
 }
       
 ?>

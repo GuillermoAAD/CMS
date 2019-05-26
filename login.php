@@ -48,7 +48,7 @@
 
                <tr>
                   <td>
-                     <input type='text' name='correo' id='correo' placeholder='Escribe tu correo(7)' />
+                     <input type='text' name='correo' id='correo' placeholder='Escribe tu correo(admin)' />
                   </td>
                </tr>
 
@@ -60,7 +60,7 @@
 
                <tr>
                   <td>
-                     <input type='text' name='pass' id='pass' placeholder='Escribe tu password(7)' />
+                     <input type='text' name='pass' id='pass' placeholder='Escribe tu password(admin)' />
                   </td>
                </tr>
 
